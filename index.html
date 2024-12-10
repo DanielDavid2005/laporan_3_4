@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Teori</title>
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar {
+      height: 100%;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-3 col-lg-2 bg-light sidebar p-3">
+        <h5 class="text-primary">Daftar Soal</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showAnswer('soal1')">Soal 1</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showAnswer('soal2')">Soal 2</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showAnswer('soal3')">Soal 3</a>
+          </li>
+        </ul>
+      </nav>
+      <main class="col-md-9 col-lg-10 p-4">
+        <h1 class="text-center text-primary">LAPORAN TEORI</h1>
+        <h2 class="text-center text-secondary">Daniel David Hamonangan Hutabarat | 202331129</h2>
+        <hr>
+        <div id="content">
+          <p>Pilih soal dari sidebar untuk melihat jawaban.</p>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script>
+    const answers = {
+      soal1: `
+        <h2>1. Konsep Dasar PHP</h2>
+        <h3>Pengertian PHP</h3>
+        <p>PHP (Hypertext Preprocessor) adalah bahasa pemrograman open-source yang umumnya digunakan untuk membangun aplikasi web dinamis dan interaktif. PHP dapat dijalankan pada server web dan dikombinasikan dengan HTML, CSS, dan JavaScript untuk membuat halaman web yang dinamis PHP adalah bahasa pemrograman yang banyak digunakan dalam pembuatan website untuk ecommerce, landing page, dan juga sistem informasi. PHP ini termasuk bahasa pemrograman dengan basis server side yang membuat script diproses oleh server. Server yang biasanya dipakai yaitu Litespeed, Nginx, dan juga Apache.
+        bahasa pemrograman ini juga memiliki banyak kerangka kerja (framework) yang dapat digunakan oleh pengembang untuk mempercepat proses pembuatan aplikasi web. Beberapa kerangka kerja PHP yang populer antara lain Laravel, CodeIgniter, dan Symfony.
+        </p>
+        <h3>Keungulan bahasa PHP dibandingkan bahasa sejenis</h3>
+        <ol>
+          <li>
+            <p><strong>Gratis dan open-source</strong></p>
+            <p>Bahasa pemrograman ini gratis dan sumber terbuka. Tidak perlu membayar biaya lisensi untuk menggunakan PHP dan juga dapat mengakses kode sumber PHP secara bebas. Hal ini memudahkan para pengembang untuk membuat aplikasi web tanpa harus membayar biaya lisensi mahal.</p>
+            </li>
+          <li>
+            <p><strong>Mudah dipelajari</strong></p>
+            <p>PHP cenderung lebih mudah untuk dipelajari. Apabila dibandingkan dengan bahasa pemrograman yang populer lainnya PHP ini lebih mudah terutama untuk pemula.</p>
+            </li>
+          <li>
+            <p><strong>Keamanan</strong></p>
+            <p>PHP memiliki beberapa fitur keamanan yang membantu melindungi aplikasi web dari serangan dan kebocoran data. Salah satu fitur keamanan yang penting dalam PHP adalah magic quotes, yang secara otomatis melindungi input pengguna dari karakter yang tidak diinginkan.</p>
+            </li>
+          <li>
+          <p><strong>Memiliki banyak pilihan database</strong></p>
+          <p>PHP dapat digunakan di semua jenis database. Database yang bisa digunakan mulai dari MySQL bahkan hingga non relasional seperti Redis.</p>
+          </li>
+        </ol>
+        
+      `,
+      soal2: `
+        <h2> 2.	Perbandingan GET dan POST</h3>
+        <h3>Perbedaan antara metode GET dan POST dalam penggunaan di sebuah website</h3>
+        <p>Metode GET digunakan untuk mengirimkan data melalui URL, Metode POST digunakan untuk mengirimkan data secara tersembunyi melalui permintaan HTTP.</p>
+        <p>perbedaan :</p>
+        <ul>
+          <li>Metode GET mengirimkan data melalui URL, sedangkan metode POST mengirimkan data melalui badan permintaan HTTP.</li>
+          <li>Metode GET kurang aman karena data dikirimkan secara terbuka di URL, sementara metode POST lebih aman karena data tidak terlihat di URL.</li>
+          <li>Metode GET memiliki batasan kapasitas data yang dapat dikirimkan, sementara metode POST memungkinkan pengiriman data yang lebih besar</li>
+          <li>Metode POST lebih cocok untuk mengirim data sensitif seperti kata sandi atau informasi pribadi karena data tidak terlihat oleh pengguna atau tersimpan dalam log server.</li>
+          </ul>
+        <h3>contoh kasus penggunaan</h3>
+        <p><strong>metode GET</strong></p>
+        <p>if(isset($_GET['submit'])) {
+        $nama_lengkap = $_GET['nama_lengkap'];
+        echo 'Hai, '.$nama_lengkap; // Hai, Afid Arifin
+        </p>
+        <p><strong>metode POST</strong></p>
+        <p>if(isset($_POST['submit'])) {
+        $nama_lengkap = $_POST['nama_lengkap'];
+        echo 'Hai, '.$nama_lengkap;
+        </p>
+      `,
+      soal3: `
+        <h2>3. Penggunaan include, require, dan koneksi PHP dengan MySQL</h2>
+        <h3>fungsi include dan require dalam PHP dan  perbedaan mendasar antara keduanya</h3>
+        <p>Fungsi include() dan require() adalah suatu perintah atau fungsi di dalam pemrograman PHP untuk menyisipkan sebuah file PHP kedalam file PHP yang lainnya. Perbedaan keduanya adalah Pada perintah impor menggunakan keyword includeketika file tidak ditemukan, PHP akan menampilkan Error Warning tanpa membuat program berhenti berjalan. Sedangkan ketika menggunakan require ketika file tidak ditemukan, PHP akan menampilkan Fatal Error dan program akan langsung berhenti berjalan.</p>
+        <h3>contoh implementasi sederhana untuk menyambungkan PHP dengan database MySQL</h3>
+        <p>$conn = new mysqli($host, $username, $password, $database);</p>
+        <p>digunakan untuk memangil objek MySQLi yang merepresentasikan koneksi ke database MySQL.</p>
+        <h3>Mengapa penggunaan include dan require penting</h3>
+        <p>ketika program yang kita bangun semakin besar, maka ada semakin banyak fungsi atau konten halaman yang butuh kita panggil atau tampilkan berkali-kali di berbagai tempat. Dari pada mendefinisikan fungsi atau halaman tersebut secara berulang, kita lebih baik hanya mendefinisikannya sekali saja, untuk kemudian memanggilnya dari berbagai tempat dari file yang berbeda-beda. Misalkan kita memiliki sebuah projek web profil, kita memiliki 3 halaman utama yaitu index.php, about.php, dan contact.php. Ketiga halaman tersebut semuanya memiliki header, footer, dan navbar yang sama. Sehingga dari pada kita membuat 3 header untuk masing-masing halaman, begitu juga 3 buah footer, dan 3 buah navbar. Lebih baik kita hanya membuat satu komponen saja, yang komponen tersebut akan dimuat di halaman-halaman yang membutuhkannya. Di situlah kita membutuhkan fungsi include dan require</p>
+        `
+    };
+
+    function showAnswer(soalId) {
+      const contentDiv = document.getElementById('content');
+      contentDiv.innerHTML = answers[soalId];
+    }
+  </script>
+</body>
+</html>
